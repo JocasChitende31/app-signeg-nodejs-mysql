@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="/js/athu.js" defer></script>
+    <%- include('./includes/font-awsome.ejs')%>
+</head>
+
+<body>
+  
+    <%- include('./includes/navbar.ejs')%>
+        <div class="home">
+            <div class="home-left__content">
+                <% for( let service of data) {%>
+                    <div class="services-home_card">
+                        <div class="card-content">
+                            <div class="title-availeble">
+                                <h6>SERVIÇO DISPONÍVEL</h6>
+                            </div>
+                            <div class="card-title">
+                                <h3>
+                                    <%=service.title%>
+                                </h3>
+                            </div>
+                            <div class="text-card-home">
+                                <p>
+                                    <%=service.description%>
+                                </p>
+                            </div>
+                            <div class="price">
+                                <% if( service.percentageServiceOff<=0 ) {%>
+                                    <h3> <b>AOA</b>
+                                        <%=service.price%> <i>kzs</i>
+                                    </h3>
+                                    <%}else{%>
+                                        <h3 style=" text-decoration: line-through;"> <b>AOA</b>
+                                            <%=service.price%> <i>kzs</i>
+                                        </h3>
+                                        <%}%>
+                                            <% if(service.percentageServiceOff>0) {%>
+                                                <h3 style="color: red;"><b>AOA</b>
+                                                    <%= (service.price - (service.price *
+                                                        service.percentageServiceOff)/100) %> <i>kzs</i>
+                                                </h3>
+                                                <%} else {%>
+
+                                                    <%}%>
+                            </div>
+                            <div class="card-link">
+                                <a href="/service/<%=service.id_service%>">SABER MAIS</a>
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+
+            </div>
+            <div class="home-right__content">
+                <div class="right-news">
+                    <header class="news-header">
+                        <h3 class="news-title">News</h3>
+                    </header>
+                    <div class="card">
+                        <div class="card-title">
+                            <h5>Titúlo da Notícia</h5>
+                        </div>
+                        <div class="card-content">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, obcaecati. Lorem, ipsum
+                                dolor.
+                            </p>
+                        </div>
+
+                        <div class="card-footer">
+                            <p>31 03 2023</p>
+                        </div>
+                        <hr style="opacity: .2;">
+
+                        <div class="news-see__more">
+                            <button class="btn-see__more">ver mais</button>
+                        </div>
+                    </div>
+                    <div class="card" style="margin-top: 10px;">
+                        <div class="card-title">
+                            <h5>Titúlo da Notícia</h5>
+                        </div>
+                        <div class="card-content">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, obcaecati. Lorem, ipsum
+                                dolor.
+                            </p>
+                        </div>
+
+                        <div class="card-footer">
+                            <p>31 03 2023</p>
+                        </div>
+                        <hr style="opacity: .2;">
+
+                        <div class="news-see__more">
+                            <button class="btn-see__more">ver mais</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <%- include('./includes/footer.ejs')%>
+</body>
+
+</html>

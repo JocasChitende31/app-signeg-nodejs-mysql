@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.page-not_found-background{
+    /* background-image: url("https://colorlib.com/wp/wp-content/uploads/sites/2/404-error-page-templates.jpg.webp"); */
+    background-image: url("https://colorlib.com/wp/wp-content/uploads/sites/2/404-error-template-3.png.webp");
+
+    background-size:cover;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+}
+.page-not_found-background .back-to_home{
+  
+    position: relative;
+    z-index: 1;
+}
+.back-to_home .btn-back_home{
+
+  position: absolute;
+  top: 510px;
+  left:736px;
+  
+  background-color: rgb(114, 194, 231);
+  padding: 5px 10px;
+
+  text-decoration: none;
+  color: black;
+  font-size:large;
+  letter-spacing: 1px;
+  border-radius: 5px;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+  /* border: 1px solid ; */
+}
+.back-to_home .btn-back_home:hover{
+  background-color: rgba(114, 194, 231, 0.750);
+  text-decoration:underline;
+}
+

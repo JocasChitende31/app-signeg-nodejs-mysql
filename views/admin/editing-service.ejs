@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="/css/main.css">
+    <%- include('../includes/font-awsome.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navbar.ejs') %>
+        <% for(let service of data){ %>
+            <div class="modal" style="display: block;">
+                <div class="modal-content">
+                    <h1 class="title-modal"> <i class="fa-regular fa-rotate"></i> SERVIÇO </h1>
+                    <form class="form" action="/admin/updateService/<%=service.id_service%>" method="post">
+                        <input type="hidden" value="<%=service.id_service%>" name="id_user">
+                        <input type="hidden" name="_method" value="put">
+                        <div class="form-group">
+                            <label class="form-label" for="title" id="titulo">Título</label>
+                            <input class="form-control" type="text" name="title" id="title"
+                                placeholder="Digite o título" value="<%=service.title%>">
+                        </div>
+                        <div class="selects">
+                            <div class="form-group_select">
+                                <label class="form-label_select" for="id_fk_price" id="id_fk_price">Selecione preço:</label>
+                                <select class="form-control_select" name="id_fk_price" id="id_fk_price">
+                                    <% if(dataPrice.length>0) {%>
+                                        <option value="<%=service.id_fk_price %>">
+                                            <%=service.price%> 00kz
+                                        </option>
+                                        <% for(let price of dataPrice) {%>
+                                            <option value="<%=price.id_price%>">
+                                                <%=price.price%> 00kz
+                                            </option>
+                                            <%}%>
+                                                <%}%>
+
+                                </select>
+                            </div>
+
+                            <div class="form-group_select" style="margin-left: 20px;">
+                                <label class="form-label_select" for="id_fk_perc_serv" id="id_fk_perc_serv">Selecione a (%):</label>
+                                <select class="form-control_select" name="id_fk_perc_serv" id="id_fk_perc_serv">
+                                    <% if(dataPercentage.length>0) {%>
+                                        <option value="<%= service.id_fk_perc_serv%>">
+                                            <%= service.percentageServiceOff%> %
+                                        </option>
+                                        <% for(let percentage of dataPercentage) {%>
+                                            <option value="<%=percentage.id_perc_off%>">
+                                                <%= percentage.percentageServiceOff %> %
+                                            </option>
+                                            <%}%>
+
+                                                <%}%>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="desciption" id="description">Descrição</label>
+                            <textarea class="form-control" name="description" id="" cols="20" rows="5" value=""
+                                wrap="hard"
+                                placeholder="Escreva um parágrafo que caracterize o serviço em questão..."><%=service.description%></textarea>
+                        </div>
+                        <button type="submit" class="btn-form">Actualizar</button>
+                        <a class="btn-cancelar" href="/admin/services">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+            <%}%>
+                <%- include('../includes/footer.ejs')%>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="/css/signup.css">
+    <%- include('../includes/font-awsome.ejs') %>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title-page">Signup<i class="fa-regular fa-arrow-right-from-bracket"></i> </h1>
+        <div class="content">
+            <% if(messageSuccess.length>0) { %>
+                <div
+                    style=" width: 95%; margin: 0 auto; padding: 10px 10px;  display: flex; justify-content:space-between; text-align: center; background-color:rgb(228, 255, 188); border-radius: 2px; ">
+                    <p style=" color: rgba(5, 128, 5, 0.821); letter-spacing: .2px;">
+
+                        <%=messageSuccess%>
+
+
+                    </p>
+                    <i class="fa-regular fa-check-circle" style=" color: rgba(5, 128, 5, 0.746);"></i>
+                </div>
+                <br>
+                <%} else if(messageError.length>0) { %>
+                    <div
+                        style=" z-index:5; width: 95%; margin: 0 auto; padding: 8px 10px;  display: flex; justify-content:space-between; text-align: center; background-color:rgb(246, 213, 213); border-radius: 2px; border-bottom:1px solid red;">
+                        <p style=" color: red; letter-spacing: 1px;">
+                            <%=messageError%>
+                        </p>
+                        <i class="fa-solid fa-copy" style=" color: red;"></i>
+                    </div>
+                    <%}%>
+                        <hr style="z-index: 2; width: 100%;">
+                        <p class="title-form"> Por favor, preencha com seus dados para cadastrar sua conta! </p>
+                        <hr style="z-index: 2; width: 100%;">
+                        <form action="/signued" method="post" class="form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Nome completo</label>
+                                <i class="fa-solid fa-user"></i><input type="text" name="name" class="form-control"
+                                    placeholder="Digite o nome completo">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <i class="fa-solid fa-at"></i><input type="email" name="email" class="form-control"
+                                    placeholder="Digite o email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="form-label">Palavra-Passe</label>
+                                <i class="fa-solid fa-user-lock"></i><input type="password" name="password"
+                                    class="form-control" placeholder="Digite a palavra-passe">
+                            </div>
+                            <div class="form-group">
+                                <label for="password2" class="form-label"> Confirmar Palavra-Passe</label>
+                                <i class="fa-solid fa-lock"></i><input type="password" name="password2"
+                                    class="form-control" placeholder="Confirmar a palavra-passe">
+                            </div>
+                            <div class=" btn-login">
+                                <button type="submit" class="btn">Cadastrar-se</button>
+                            </div>
+                        </form>
+                        <hr style="z-index: 2; width: 100%; margin-top: 30px;">
+                        <!-- <div class="or">
+                <h4> OU</h4>
+            </div> -->
+                        <div class="other-way-to_login">
+                            <ul>
+                                <li>
+                                    <a href="/"><i class="fa-solid fa-circle-arrow-left"></i></a>
+                                </li>
+                                <li>
+                                    <a href="/login"> Entrar <i class="fa-solid fa-person-walking-arrow-right"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+        </div>
+    </div>
+</body>
+
+</html>

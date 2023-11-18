@@ -1,0 +1,81 @@
+<div class="background-home">
+    <nav class="_nav">
+        <div class="_nav-logo">
+            <ul class="_nav-logo_links">
+
+                <li><a href="/" style="color: white; letter-spacing: 1px;">SIGNegócios</a></li>
+
+            </ul>
+            <% if(messageSuccess.length>0) { %>
+                <div
+                    style="z-index: 3; width: 15%; margin: 0 auto; padding: 8px 10px;  display: flex; justify-content:space-between; text-align: center; background-color:#0a1e2c; border-radius: 2px; border-bottom: 1px solid #58c8c1;">
+                    <p style=" color: #58c8c1; letter-spacing: 1px;">
+
+                        <%=messageSuccess%>
+
+
+                    </p>
+                    <i class="fa-regular fa-check-circle" style=" color: #58c8c1;"></i>
+                </div>
+                <%} else if(messageError.length>0) {%>
+                    <div
+                        style=" z-index:5; width: 15%; margin: 0 auto; padding: 8px 10px;  display: flex; justify-content:space-between; text-align: center; background-color:rgba(110, 71, 71, 0.401); border-radius: 2px; border-bottom:1px solid red;">
+                        <p style=" color: red; letter-spacing: 1px;">
+                            <%=messageError%>
+                        </p>
+                        <i class="fa-solid fa-user-xmark" style=" color: red;"></i>
+                    </div>
+                    <%}%>
+                        <ul class="_nav-auth_links">
+                            <% if(userAccountName){%>
+                                <li>
+                                    <a style="text-decoration: none;" href="/profile">
+                                    <b
+                                        style=" font-size: 12px; font-weight:lighter; letter-spacing: 1px; color: #58c8c1;">
+                                        <i class="fa-solid fa-circle-user"></i>
+                                        <%=userAccountName.usernameLogged%>
+                                    </b>
+                                    
+                                    </a>
+                                </li>
+                                <%} else {%>
+                                    <li class="text-login"><a> <i class="fa-regular fa-arrow-right-to-bracket"></i></a>
+                                    </li>
+                                    <li class="text-login_hover"><a href="/login"><span class=""> Entrar </span><i
+                                                class="fa-solid fa-person-walking-arrow-right"></i></a></li>
+
+                                    <!-- <li><a href="auth/signup">Cadastrar <i class="fa-regular fa-arrow-right-from-bracket"></i></a></li> -->
+                                    <%}%>
+                        </ul>
+        </div>
+        <div class="_nav-div"></div>
+        <div class="_nav-links">
+            <ul class="_nav-list">
+                <li><a href="/" class="<%= path === '/home' ? 'active' : ''%>">Página principal</a></li>
+                <li><a href="/admin/services"
+                        class="<%= (path === '/services') || (path === '/details') ? 'active' : ''%>">Serviços</a>
+                </li>
+                <% if(userAccountName){%>
+                    <li><a href="/admin/users" class="<%= path === '/users' ? 'active' : ''%>">Usuários</a></li>
+                    <%}%>
+                        <li><a href="/about" class="<%= path === '/about' ? 'active' : ''%>">Sobre</a></li>
+                        <% if(userAccountName){%>
+                            <li style="border-left: 2.5px solid #57717E;" ><a style="margin-left: 35px;" href="/logout" > <i  class="fa-regular fa-circle-right"></i></a></li>
+                            <%}%>
+            </ul>
+        </div>
+        <div class="hr">
+            <hr>
+        </div>
+    </nav>
+
+    <div class="text-background">
+        <h2>
+            <%= titleBanner %>
+        </h2>
+        <p>
+            <%= paragraphBanner %>
+        </p>
+    </div>
+
+</div>

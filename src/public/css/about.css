@@ -1,0 +1,86 @@
+.about {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.about-content {
+    /* display: flex;
+    justify-content: space-between; */
+
+    width: 100%;
+    margin: 10px 0 10px 0;
+}
+
+.about-title {
+    box-shadow: -1px 1px 6px -2px rgba(194, 232, 250, 0.998);
+    padding: 10px;
+    border: .5px solid rgba(194, 232, 250, 0.37);
+}
+
+.about-descriptions {
+    padding: 10px 10px;
+    letter-spacing: .5px;
+}
+
+.about-descriptions p {
+    font-size: 15px;
+    color: grey;
+    text-align: justify;
+    letter-spacing: 1px;
+
+    line-height: 30px;
+}
+
+.about-descriptions p:nth-child(2) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.about-services {
+    padding: 10px 5px;
+}
+
+.title-services {
+    box-shadow: -1px 1px 6px -2px rgba(194, 232, 250, 0.998);
+    padding: 10px;
+    border: .5px solid rgba(194, 232, 250, 0.37);
+
+    margin-bottom: 15px;
+}
+
+.services {
+    padding: 10px 10px;
+}
+
+.service {
+    margin-bottom: 20px;
+}
+
+.service .header-service {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    cursor: pointer;
+}
+
+.service .header-service i:hover {
+    color: rgb(114, 194, 231);
+}
+
+.service .p-description {
+    padding: 10px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: grey;
+    text-align: justify;
+
+    display: none;
+}
+
+button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}

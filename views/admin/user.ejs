@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/modal.js" defer></script>
+    <script src="/js/athu.js" defer></script>
+    <%- include('../includes/font-awsome.ejs') %>
+
+</head>
+
+<body>
+
+
+    <%- include('../includes/navbar.ejs')%>
+
+
+        <% if(data.length> 0) {%>
+            <% if(messageSuccess.length>0) { %>
+                <div
+                    style=" width: 25%; margin: 0 auto; padding: 10px 10px;  display: flex; justify-content:space-between; text-align: center; background-color:rgb(228, 255, 188); border-radius: 2px; border-bottom: 1px solid green;">
+                    <p style=" color: rgba(5, 128, 5, 0.821); letter-spacing: 1px;">
+
+                        <%=messageSuccess%>
+
+
+                    </p>
+                    <i class="fa-regular fa-check-circle" style=" color: rgba(5, 128, 5, 0.746);"></i>
+                </div>
+                <br>
+                <%} else if(messageError.length>0) { %>
+                    <div
+                        style=" z-index:5; width: 30%; margin: 0 auto; padding: 8px 10px;  display: flex; justify-content:space-between; text-align: center; background-color:rgb(246, 213, 213); border-radius: 2px; border-bottom:1px solid red;">
+                        <p style=" color: red; letter-spacing: 1px;">
+                            <%=messageError%>
+                        </p>
+                        <i class="fa-regular fa-circle-xmark" style=" color: red;"></i>
+                    </div>
+                    <%}%>
+                        <!-- <div style="text-align: center;">
+                <h2>Usuários disponíveis no sistema</h2>
+            </div> -->
+                        <div class="button"><button type="button" class="btn" id="btn-modal"> <i
+                                    style="font-size: 20px;" class="fa-regular fa-user-plus"></i> </button></div>
+
+                        <%- include('../includes/modal-user.ejs')%>
+                            <div class="table">
+                                <table class="table-content">
+                                    <tr class="table-header">
+                                        <th style="border-top-left-radius: 10px;">ID</th>
+                                        <th>Nome</th>
+                                        <th>E-mail</th>
+                                        <th>Password</th>
+                                        <th style="border-top-right-radius: 10px;" colspan="2">Ações</th>
+
+                                    </tr>
+
+                                    <% for(let user of data){%>
+
+                                        <tr class="table-body">
+
+                                            <td>
+                                                <script>document.write(new Date().getFullYear())</script>
+                                                <%= user.id_user %>
+                                            </td>
+                                            <td>
+                                                <%= user.name %>
+                                            </td>
+                                            <td>
+                                                <%= user.email%>
+                                            </td>
+                                            <td>
+                                                <%= user.password %>
+                                            </td>
+                                            <td><a href="/edituser/<%= user.id_user%>" style="color: green;">Editar</a>
+                                            </td>
+                                            <td>
+                                                <a href="/delete/<%=user.id_user%>" style="color: red;">Eliminar</a>
+                                            </td>
+                                        </tr>
+                                        <%}%>
+
+                                </table>
+                                <%} else {%>
+                                    <h1 style="text-align: center;">ups, sem usuários!</h1>
+                                    <div class="button"><button type="button" class="btn" id="btn-modal">Adicionar
+                                            usuário</button>
+                                    </div>
+                                    <!-- MODAL REGISTER USER -->
+                                    <%- include('../includes/modal-user.ejs')%>
+                                        <%}%>
+
+                            </div>
+
+                            <%- include('../includes/footer.ejs')%>
+</body>
+
+</html>

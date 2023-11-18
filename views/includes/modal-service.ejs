@@ -1,0 +1,53 @@
+<!-- modal -->
+<div class="modal">
+    <div class="modal-content">
+        <h1 class="title-modal"> <i class="fa-regular fa-plus-circle"></i> SERVIÇO</h1>
+        <form class="form" action="/createService" method="post">
+            <div class="form-group">
+                <label class="form-label" for="title" id="titulo">Título</label>
+                <input class="form-control" type="text" name="title" id="title" placeholder="Digite o título" value="">
+            </div>
+            <div class="selects">
+                <div class="form-group_select">
+                    <label class="form-label_select" for="price" id="price">Selecione preço:</label>
+                    <select class="form-control_select" name="id_fk_price" id="id_fk_price">
+                        <% if(dataPrice.length>0) {%>
+                            <option value="">Clicar para escolher o preço...</option>
+                            <% for(let price of dataPrice) {%>
+                                <option value="<%=price.id_price%>">
+                                    <%=price.price%> 00kz
+                                </option>
+                                <%}%>
+                                    <%}else{%>
+                                        <option value="">Nada para escolher...</option>
+                                        <%}%>
+                    </select>
+                </div>
+
+                <div class="form-group_select" style="margin-left: 20px;">
+                    <label class="form-label_select" for="password" id="password">Selecione a (%):</label>
+                    <select class="form-control_select" name="id_fk_perc_serv" id="id_fk_perc_serv">
+                        <% if(dataPercentage.length>0) {%>
+                            <option value="">Clicar para escolher a percentagem...</option>
+                            <% for(let percentage of dataPercentage) {%>
+                                <option value="<%=percentage.id_perc_off%>">
+                                    <%= percentage.percentageServiceOff %> %
+                                </option>
+                                <%}%>
+                                    <%}else{%>
+                                        <option value="">Nada para escolher...</option>
+                                        <%}%>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="desciption" id="description">Descrição</label>
+                <textarea class="form-control" name="description" id="" cols="20" rows="5" value="" wrap="hard"
+                    placeholder="Escreva um parágrafo que caracterize o serviço em questão..."></textarea>
+            </div>
+            <button type="submit" class="btn-form">Salvar</button>
+            <!-- <a class="btn-cancelar" href="/admin/services" >Cancelar</a> -->
+        </form>
+    </div>
+</div>
+<!-- /modal -->

@@ -1,0 +1,147 @@
+.details {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.details-content {
+    /* display: flex;
+    justify-content: space-between; */
+
+    width: 100%;
+    margin: 10px 0 10px 0;
+
+}
+
+.details-title {
+    box-shadow: -1px 1px 6px -2px rgba(194, 232, 250, 0.998);
+    padding: 10px;
+    border: .5px solid rgba(194, 232, 250, 0.37);
+}
+
+.details-descriptions {
+    padding: 10px 10px;
+    letter-spacing: .5px;
+}
+
+.details-descriptions p {
+    font-size: 15px;
+    color: grey;
+    text-align: justify;
+
+    line-height: 30px;
+
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.schedule-service {
+    /* padding: 10px 10px 0px 10px; */
+    width: 95%;
+    margin: 0 auto;
+    border-top: 1px solid rgb(114, 194, 231);
+    position: relative;
+
+}
+
+.details-subtitle_schedule {
+    position: absolute;
+    top: -17px;
+    right: 38.5%;
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+
+    letter-spacing: .5px;
+    font-size: small;
+    color: rgb(114, 194, 231);
+}
+
+.card-details_content {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 15px 30px 15px;
+
+}
+
+.card-details_price {
+    box-shadow: -1px 1px 6px -2px rgba(194, 232, 250, 0.998);
+    padding: 5px;
+    border: .5px solid rgba(194, 232, 250, 0.589);
+    border-radius: 5px;
+
+    padding: 10px;
+    /* margin: 25px 10px 25px 10px; */
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    position: relative;
+}
+
+.card-details_price:hover {
+    border: .5px solid rgb(122, 213, 255);
+    cursor: pointer;
+}
+
+.plan-word {
+    position: absolute;
+    top: -11px;
+    background-color: white;
+
+    /* box-shadow: -1px 1px 6px -2px rgba(194, 232, 250, 0.998); */
+    padding: 3px 20px;
+    /* border: .5px solid rgba(194, 232, 250, 0.787); */
+    border-radius: 5px;
+
+    font-size: x-small;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: rgb(114, 194, 231);
+}
+.checkbox-hover{
+    width: 100%;
+    text-align:right;
+    color: white;
+}
+
+.card-period_time {
+    padding: 20px 0;
+}
+
+.card-period_time h3 {
+    letter-spacing: .5px;
+    font-size: small;
+    color: green;
+}
+
+.card-price h3 {
+    font-weight: lighter;
+    font-size: small;
+}
+
+.card-link {
+    padding: 25px 30px;
+}
+.card-link a{
+    background-color: white;
+    /* border-color: #58c8c1; */
+    border: .5px solid #58c8c1;
+    padding: 8px 30px;
+    border-radius: 5px;
+    
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: black;
+    font-weight: bold;
+}
+.card-link a:hover{
+    background-color: rgba(194, 232, 250, 0.3);
+    border-color: #58c8c1;
+    /* color: grey; */
+    text-decoration: underline;
+   
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/details.css">
+    <%- include('./includes/font-awsome.ejs') %>
+    <script src="/js/details.js" defer></script>
+    <script src="/js/athu.js" defer></script>
+</head>
+
+<body>
+
+    <%- include('./includes/navbar.ejs') %>
+
+        <div class="details">
+            <div class="details-title">
+                <h3>
+                    <%=service.title%>
+                </h3>
+            </div>
+            <div class="details-content">
+                <div class="details-descriptions">
+                    <p>
+                        <%=service.description%>
+                    </p>
+                </div>
+                <div class="schedule-service">
+                    <div class="details-subtitle_schedule">
+                        <h3>Agendar Instalação</h3>
+                    </div>
+                    <div class="card-details_content"  >
+                        <div class="card-details_price" id="card-details_quarterly">
+                            <div class="plan-word">PLANO 1</div>
+                            <div class="checkbox-hover">
+                                <i class="fa-regular fa-check-circle"></i>
+                            </div>
+                            <div class="card-period_time">
+                                <h3>Trimestral</h3>
+                            </div>
+
+                            <% if(service.percentageServiceOff<=0) {%>
+                                <div class="card-price">
+                                    <h3> <b>AOA</b>
+                                        <%=(service.price /12)*3%>
+                                            <i>kzs</i>
+                                    </h3>
+                                </div>
+                                <%}else {%>
+                                    <div class="card-price" style="text-decoration: line-through;">
+                                        <h3> <b>AOA</b>
+                                            <%=(service.price /12)*3%>
+                                                <i>kzs</i>
+                                        </h3>
+                                    </div>
+                                    <div class="card-price" style="color: red;">
+                                        <h3> <b>AOA</b>
+                                            <%= ((service.price - (service.price *
+                                                service.percentageServiceOff)/100)/12)*3 %>
+                                                <i>kzs</i>
+                                        </h3>
+                                    </div>
+                                    <%}%>
+                                        <div class="card-link">
+                                            <a href="/schedule-service">AGENDAR</a>
+                                        </div>
+                        </div>
+                        <div class="card-details_price" id="card-details_s-annual" style="margin: 0 20px 0 20px;">
+                            <div class="plan-word">PLANO 2</div>
+                            <div class="checkbox-hover">
+                                <i class="fa-regular fa-check-circle"></i>
+
+                            </div>
+                            <div class="card-period_time">
+                                <h3>Semestral</h3>
+                            </div>
+
+                            <% if(service.percentageServiceOff<=0) {%>
+                                <div class="card-price">
+                                    <h3> <b>AOA</b>
+                                        <%=(service.price /12)*6%>
+                                            <i>kzs</i>
+                                    </h3>
+                                </div>
+                                <%}else {%>
+                                    <div class="card-price" style="text-decoration: line-through;">
+                                        <h3> <b>AOA</b>
+                                            <%=(service.price /12)*6%>
+                                                <i>kzs</i>
+                                        </h3>
+                                    </div>
+                                    <div class="card-price" style="color: red;">
+                                        <h3> <b>AOA</b>
+                                            <%= ((service.price - (service.price *
+                                                service.percentageServiceOff)/100)/12)*6 %>
+                                                <i>kzs</i>
+                                        </h3>
+                                    </div>
+                                    <%}%>
+                                        <div class="card-link">
+                                            <a href="/schedule-service">AGENDAR</a>
+                                        </div>
+                        </div>
+                        <div class="card-details_price" id="card-details_annual">
+                            <div class="plan-word">PLANO 3</div>
+                            <div class="checkbox-hover">
+                                <i class="fa-regular fa-check-circle"></i>
+
+                            </div>
+                            <div class="card-period_time">
+                                <h3>Anual</h3>
+                            </div>
+
+                            <% if(service.percentageServiceOff<=0) {%>
+                                <div class="card-price">
+                                    <h3> <b>AOA</b>
+                                        <%=(service.price /12)*12%>
+                                            <i>kzs</i>
+                                    </h3>
+                                </div>
+
+                                <%} else {%>
+                                    <div class="card-price" style="text-decoration: line-through;">
+                                        <h3> <b>AOA</b>
+                                            <%=(service.price /12)*3%>
+                                                <i>kzs</i>
+                                        </h3>
+                                    </div>
+                                    <div class="card-price" style="color: red;">
+                                        <h3><b>AOA</b>
+                                            <%= ((service.price - (service.price *
+                                                service.percentageServiceOff)/100)/12)*12 %>
+                                                <i>kzs</i>
+                                        </h3>
+                                    </div>
+                                    <%}%>
+
+                                        <div class="card-link">
+                                            <a href="/schedule-service">AGENDAR</a>
+                                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('./includes/footer.ejs')%>
+</body>
+
+</html>

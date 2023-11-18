@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/service.css">
+
+    <script src="/js/modal.js" defer></script>
+    <script src="/js/athu.js" defer></script>
+    <%- include('../includes/font-awsome.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navbar.ejs')%>
+
+        <% if(data.length>0) { %>
+
+            <% if(messageSuccess.length>0) { %>
+                <div
+                    style=" width: 30%; margin: 0 auto; padding: 10px 10px;  display: flex; justify-content:space-between; text-align: center; background-color:rgb(228, 255, 188); border-radius: 20px; ">
+                    <p style=" color: rgba(5, 128, 5, 0.821); letter-spacing: .2px;">
+
+                        <%=messageSuccess%>
+
+
+                    </p>
+                    <i class="fa-regular fa-check-circle" style=" color: rgba(5, 128, 5, 0.746);"></i>
+                </div>
+                <br>
+                <%}%>
+
+            <div class="services">
+                <div class="service-content">
+                    <!-- <div class="link-button"><a href="/prices" class="link-btn"> <i class="fa-regular fa-angle-right" ></i> </a></div> -->
+                    <div class="button"><button type="button" class="btn" id="btn-modal"><i style="font-size: 20px;" class="fa-regular fa-file-circle-plus"></i></button></div>
+                    
+                        <%- include('../includes/modal-service.ejs')%>
+                            
+
+                                <div class="table">
+                                    <table class="table-content">
+                                        <tr class="table-header">
+                                            <th style="border-top-left-radius: 10px;">ID_s</th>
+                                            <th>ID_p</th>
+                                            <th>ID_%</th>
+                                            <th>Título</th>
+                                            <th>Descrição</th>
+                                            <th>Preço/kzs</th>
+                                            <th>Desc/kzs</th>
+                                            <th style="border-top-right-radius: 10px; text-align: center;" colspan="2">
+                                                Ações
+                                            </th>
+                                        </tr>
+
+                                        <% for(let service of data) {%>
+                                            <tr class="table-body">
+
+                                                <td>
+                                                    <%= service.id_service %>
+                                                        <script>document.write(new Date().getFullYear())</script>
+                                                </td>
+                                                <td>
+                                                    <%= service.id_fk_price %>
+                                                        <script>document.write(new Date().getFullYear())</script>
+
+                                                </td>
+                                                <td>
+                                                    <%= service.id_fk_perc_serv %>
+                                                        <script>document.write(new Date().getFullYear())</script>
+
+                                                </td>
+                                                <td>
+                                                    <%= service.title%>
+                                                </td>
+                                                <td>
+                                                    <%= service.description %>
+                                                </td>
+                                                <td>
+                                                    <%= service.price %>
+                                                </td>
+                                                <td>
+                                                    <%= service.price - (service.price *
+                                                        service.percentageServiceOff)/100 %>
+                                                </td>
+                                                <td><a href="/admin/editService/<%=service.id_service%>" style="color: green;">Editar</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/admin/deleteService/<%=service.id_service%>" style="color: red;">Eliminar</a>
+                                                </td>
+                                            </tr>
+                                            <%}%>
+                                    </table>
+                                    <!-- MODAL REGISTER USER -->
+                                </div>
+                </div>
+                <div class="prices">
+
+                </div>
+            </div>
+            <%} else {%>
+                <h1 style="text-align: center;">ups, sem usuários!</h1>
+                <div class="button"><button type="button" class="btn" id="btn-modal">Adicionar usuário</button>
+                </div>
+                <%}%>
+                    <%- include('../includes/footer.ejs')%>
+</body>
+
+</html>
