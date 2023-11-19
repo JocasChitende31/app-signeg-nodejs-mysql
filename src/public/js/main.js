@@ -6,6 +6,7 @@ const btnReadMore3 = document.getElementById('read-more_service_3');
 const btnReadMore4 = document.getElementById('read-more_service_4');
 const btnReadMore5 = document.getElementById('read-more_service_5');
 
+
 const pDesription = document.querySelectorAll('.p-description')[0];
 const pDesription1 = document.querySelectorAll('.p-description')[1];
 const pDesription2 = document.querySelectorAll('.p-description')[2];

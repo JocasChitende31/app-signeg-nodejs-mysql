@@ -32,7 +32,7 @@ exports.logged = async (req, res, next) => {
                                 const id = result[0].id_user;
                                 console.log(id);
                                 var token = jwt.sign({ id }, process.env.SECRET_SESSION, {
-                                    expiresIn: '1100s'
+                                    expiresIn: '1800s'
                                 });
                                 console.log(token);
                                 const nameUserLogged = result[0].name;
@@ -117,13 +117,16 @@ exports.signout = async (req, res, next) => {
 }
 
 exports.profile = async (req, res, next) => {
-
-    
-    const id = req.userId;
-    console.log(id);
-    if(!id){
-        return res.status(200).json({message: 'No one is logged'})
+    try {
+        const id = req.userId;
+        const userLoggedProfile = await userModel.getUserById(id);
+        res.status(200).render('admin/profile',
+            {
+                title: userLoggedProfile[0].name,
+                profile: userLoggedProfile
+            })
+    } catch (err) {
+        return res.status(200).json({ message: 'Informações indisponível' })
     }
-    const userLoggedProfile = await userModel.getUserById(id);
-    return res.status(200).json(userLoggedProfile);
+
 }

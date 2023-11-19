@@ -352,12 +352,11 @@ select * {
     justify-content: center;
     align-items: center;
     padding: 10px 0;
-    background-color: #2c707f;
+    background-color: #0a1e2c;
 }
 
 .footer p {
     text-align: center;
     letter-spacing: .5px;
     color: white;
-
 }

@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title%></title>
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <script src="/js/menu-options.js" defer></script>
+    <%- include('../includes/font-awsome.ejs') %>
 </head>
+
 <body>
-    
+
+    <div class="profile">
+        <div class="above-info">
+            <% for(let info of profile) {%>
+                <div class="img-perfil">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMeKlTr9n4Atj6QvVkTITQTwcF9NuDG9x2uZWDh0ADIoHsoajpUrBKTq7oitOUWJfNnOA&usqp=CAU"
+                        alt="">
+                </div>
+                <div class="info-perfil">
+                    <ul class="list">
+                        <li class="item">
+                            <p>ID: <%=info.id_user%>
+                            </p>
+                        </li>
+                        <li class="item">
+                            <h1>
+                                <%=info.name%>
+                            </h1>
+                        </li>
+                    </ul>
+                </div>
+                <%}%>
+        </div>
+        <div class="below-info">
+            <div class="option-button">
+                <ul class="option-list">
+                    <li class="option-list_item">
+                        <div id="option-btn"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                        
+                        <ul class="option-sub_list">
+                            <li><a href="/">Home</a></li>
+                            <hr>
+                            <li><a href="/about">Sobre</a></li>
+                            <hr>
+                            <li><a href="/config">Configurações</a></li>
+                            <hr>
+                            <li><a href="/logout">Sair</a></li>
+                        </ul>
+                        </licl>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="footer">
+            <p>Powered by: <b><a href="#" style="color:rgb(114, 194, 231) ; text-decoration: none;">ATende-Co</b></a> ,
+                <script>document.write(new Date().getFullYear())</script>
+            </p>
+        </div>
+    </div>
 </body>
+
 </html>
