@@ -59,36 +59,118 @@
 
                 <div class="bar-open_btn" id="btn-perfil-info_body__open">
                     <h3>Detalhes</h3>
-                    <div class="info-opne_body__plus"><i class="fa-regular fa-eye-slash"></i> </div>
-                    <div class="info-open_body__minus"><i class="fa-regular fa-eye"></i></div>
+                    <div class="info-opne_body__plus"><i class="fa-regular fa-eye"></i></div>
+                    <div class="info-open_body__minus"><i class="fa-regular fa-eye-slash"></i></div>
                 </div>
                 <div class="info-body">
                     <div class="info-body_user">
                         <h3>Minha conta</h3>
                         <div class="info-body_user__content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quos consequatur dolore
-                                neque
-                                doloribus nobis quas architecto, doloremque magni? Debitis vitae illum illo eius
-                                voluptatibus
-                                nemo corrupti quibusdam. Sed inventore aspernatur est, temporibus ipsa architecto
-                                voluptas?
-                                Nostrum labore, minus saepe laborum expedita cumque. Facilis maxime est sint hic a quae.
-                            </p>
+                            <ul class="info-body-user_basics">
+                                <li>
+                                    <h4>Identificador</h4>
+                                    <p>
+                                        <%=profile[0].id_user%>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h4>Nome</h4>
+                                    <p>
+                                        <%=profile[0].name%>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h4>Palavra-passe</h4>
+                                    <p>
+                                        <%=profile[0].password%>
+                                    </p>
+                                </li>
+                                <hr style="margin: 20px; border: 1px solid solid;">
+                                <li>
+                                    <h4>Empresa/Startup</h4>
+                                    <p>Atende startup</p>
+                                </li>
+                                <li>
+                                    <h4>Código do Alvará Comercial</h4>
+                                    <p>000123456789</p>
+                                </li>
+                                <li>
+                                    <h4>NIF</h4>
+                                    <p>006533351BE049</p>
+                                </li>
+
+                                <hr style="margin: 20px; border: 1px solid solid;">
+                                <li>
+                                    <h4>Endereços</h4>
+                                    <p>Projecto Nova, Rua 50, Edifício 104, Casa 2.3, Kilamba-Kiáxi</p>
+                                    <p>Luanda, Angola</p>
+
+                                </li>
+                            </ul>
+
+
                         </div>
 
                     </div>
                     <div class="info-body_list">
                         <h3>Agendamentos</h3>
-
                         <div class="info-body_list__content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quos consequatur dolore
-                                neque
-                                doloribus nobis quas architecto, doloremque magni? Debitis vitae illum illo eius
-                                voluptatibus
-                                nemo corrupti quibusdam. Sed inventore aspernatur est, temporibus ipsa architecto
-                                voluptas?
-                                Nostrum labore, minus saepe laborum expedita cumque. Facilis maxime est sint hic a quae.
-                            </p>
+                            <ol class="info-body-list-bought_basics">
+                                <li>
+                                    <h4>Referência da transação</h4>
+                                    <div class="bought-history-item_body">
+                                        <h5>Código: <i>
+                                                <%=profile[0].id_user%>
+                                            </i></h5>
+                                        <h5>Produto: <i>Modúlo de vendas/trimestral</i></h5>
+                                        <h5>Data da transação: <i>05/11/2023</i></h5>
+                                        <h5>Estado de transação: <i style="color: green;">Finalizada</i></h5>
+                                        <div>
+                                            <a href="#">Previzualizar</a>
+                                            ou
+                                            <a href="#">Exportar</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <hr style="margin: 20px; border: 1px solid solid;">
+                                <li>
+                                    <h4>Referência da transação</h4>
+                                    <div class="bought-history-item_body">
+                                        <h5>Código: <i>
+                                                <%=profile[0].id_user%>
+                                            </i></h5>
+                                        <h5>Produto: <i>Modúlo de vendas/trimestral</i></h5>
+                                        <h5>Data da transação: <i>23/09/2034</i></h5>
+                                        <h5>Estado de transação: <i style="color: orange;">Aprovada</i></h5>
+                                        <div>
+                                            <a href="#">Previzualizar</a>
+                                            ou
+                                            <a href="#">Exportar</a>
+                                        </div>
+                                    </div>
+
+
+                                </li>
+                                <hr style="margin: 20px; border: 1px solid solid;">
+                                <li>
+                                    <h4>Referência da transação</h4>
+                                    <div class="bought-history-item_body">
+                                        <h5>Código: <i>
+                                                <%=profile[0].id_user%>
+                                            </i></h5>
+                                        <h5>Produto: <i>Modúlo de vendas/trimestral</i></h5>
+                                        <h5>Data da transação: <i>12/07/2024</i></h5>
+                                        <h5>Estado de transação: <i style="color: red;">Pendente</i></h5>
+                                        <div>
+                                            <a href="#">Previzualizar</a>
+                                            ou
+                                            <a href="#">Exportar</a>
+                                        </div>
+                                    </div>
+
+                                </li>
+
+                            </ol>
                         </div>
                     </div>
 
@@ -103,6 +185,7 @@
             </div>
         </div>
         <hr>
+
         <div class="footer">
             <p>Powered by: <b><a href="#" style="color:rgb(114, 194, 231) ; text-decoration: none;">ATende-Co</b></a> ,
                 <script>document.write(new Date().getFullYear())</script>

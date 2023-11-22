@@ -23,7 +23,7 @@
     height: 200px;
     /* transform: scale(1.2); */
     overflow: hidden;
-    cursor:pointer;
+    cursor: pointer;
     border-radius: 50%;
     /* border: 3px solid #53c9e6; */
     position: absolute;
@@ -31,7 +31,7 @@
     left: 15%;
 
     transform: translate(12%, 5%);
-   
+
 
 }
 
@@ -66,7 +66,7 @@
 .below-info {
     background: #e8ebed;
     width: 99.5%;
-    height: 65vh;
+    height: auto;
     margin: 2px auto 0 auto;
 
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -154,7 +154,7 @@
 .perfil-info_body .info-body {
     display: none;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: first baseline;
 
     padding: 15px 0px 0 0;
 
@@ -162,14 +162,119 @@
     margin: 0 auto;
 }
 
-.info-body .info-body_user h3,
-.info-body .info-body_list h3 {
+.info-body .info-body_user,
+.info-body .info-body_list {
+    padding: 20px;
 
-    padding: 0 0 10px 5px;
-    color: grey;
+    position: relative;
+}
+
+.info-body .info-body_user h3 {
+    padding: 0 5px 0px 5px;
+    color: #0a1e2c;
     font-weight: lighter;
     letter-spacing: 1px;
 
+    position: absolute;
+
+    transform: translate(200%, -145%);
+
+    background-color: #e8ebed;
+}
+
+.info-body_user .info-body_user__content {
+    padding: 10px 15px 10px 15px;
+}
+
+.info-body_user__content .info-body-user_basics {
+    list-style: none;
+}
+
+.info-body_user__content .info-body-user_basics li {
+    padding: 5px 0px;
+}
+
+.info-body_user__content .info-body-user_basics li:last-child {
+    padding-bottom: 0px;
+}
+
+.info-body_user__content .info-body-user_basics li h4 {
+
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: rgb(77, 77, 77);
+    margin-bottom: 5px;
+}
+
+.info-body_user__content .info-body-user_basics li p {
+    font-size: 12px;
+    color: grey;
+
+    margin: 0 0 0 10px;
+    padding: 8px 0 8px 10px;
+
+    /* border: .5px solid black; */
+
+    background-color: #d1d1d199;
+    letter-spacing: 1px;
+
+}
+
+.info-body .info-body_list h3 {
+    padding: 0px 5px 0px 5px;
+    color: #0a1e2c;
+    font-weight: lighter;
+    letter-spacing: 1px;
+
+    position: absolute;
+
+    transform: translate(155%, -145%);
+
+    background-color: #e8ebed;
+}
+
+.info-body_list .info-body_list__content {
+    padding-left: 40px;
+}
+
+.info-body_list .info-body_list__content .info-body-list-bought_basics {
+    list-style: decimal;
+    padding-right: 15px;
+}
+
+.info-body_list__content .info-body-list-bought_basics h4 {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: rgb(77, 77, 77);
+
+    margin-bottom: 5px;
+
+    padding: 10px 15px 10px 15px;
+}
+
+.info-body_list__content .info-body-list-bought_basics li .bought-history-item_body {
+    font-size: 12px;
+    
+    color: grey;
+
+    margin: 0 0 0 10px;
+    padding: 8px 0 8px 10px;
+
+    /* border: .5px solid black; */
+
+    background-color: #d1d1d199;
+    letter-spacing: 1px;
+}
+
+.info-body-list-bought_basics li .bought-history-item_body h5{
+    padding: 5px;
+    font-weight:normal;
+}
+.info-body-list-bought_basics li .bought-history-item_body h5 i{
+    font-weight:bold;
+    color: black;
 }
 
 .info-open_body__minus {
@@ -177,38 +282,46 @@
 }
 
 .info-body .info-body_user {
+    width: 90%;
+    margin-right: 10px;
 
-    border-right: 1px solid rgb(216, 216, 216);
+    /* background-color: blue; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .info-body .info-body_list {
+    width: 90%;
+    margin-left: 10px;
 
-    padding-left: 25px;
+    /* background-color: red; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .background-body {
     background-color: rgb(209, 209, 209);
     width: 95%;
-    height:30vh;
+    height: 30vh;
 
     margin: 10px auto;
     padding: 10px 0;
     position: relative;
 }
-.background-body .bg-body_icon i{
-    
+
+.background-body .bg-body_icon i {
+
     position: absolute;
-    top:25%;
+    top: 25%;
     left: 50%;
 
     color: grey;
 
     font-size: 100px;
 }
-.background-body .bg-body_icon p{
-    
+
+.background-body .bg-body_icon p {
+
     position: absolute;
-    top:70%;
+    top: 70%;
     left: 43%;
 
     color: rgb(86, 86, 86);
